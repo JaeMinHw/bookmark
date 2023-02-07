@@ -7,6 +7,7 @@
   border-radius: 50px;
   background: #e0e0e0;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  z-index: -3;
 }
 
 .title {
@@ -14,4 +15,36 @@
   font-size: 42px;
   top: 20%;
   left: 41%;
+  z-index: -2;
+}
+
+.button {
+  position: absolute;
+  top: 10%;
+  left: 80%;
+  font-weight: 600;
+  height: 40px;
+  padding: 12px 20px;
+  outline: none;
+  border: 1px solid black;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 7px;
+  left: 7px;
+  height: 100%;
+  background-color: rgb(201, 184, 246);
+  z-index: -1;
+  transition: all 0.35s;
+  border-radius: inherit;
+}
+
+.button:hover:after {
+  top: 0px;
+  left: 0px;
 }
