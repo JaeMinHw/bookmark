@@ -10,7 +10,7 @@ function App() {
         <Route path="/book" element={<Book />}></Route>
         {/* <Route path="/book/:id" element={<Modi />}></Route> */}
         <Route path="/book/:userID" element={<Book />}></Route>
-        <Route path="/book/:userID/:id" element={<Modi />}></Route>
+        <Route path="/modibook/:userID/:id" element={<Modi />}></Route>
       </Routes>
     </Router>
   );

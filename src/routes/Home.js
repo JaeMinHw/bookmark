@@ -15,7 +15,7 @@ function Home() {
     ).json();
 
     if (json.result === "success") {
-      alert("로그인 성공입니다.");
+      alert("로그인 성공입니다. \n" + json.name + "님 안녕하세요.");
       localStorage.setItem("ID", json.ID);
       localStorage.setItem("pw", json.pw);
       localStorage.setItem("name", json.name);

@@ -35,3 +35,8 @@
 .item:active {
   transform: scale(0.95) rotateZ(1.7deg);
 }
+
+a {
+  color: #2c2c2c;
+  text-decoration: none;
+}
