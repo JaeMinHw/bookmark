@@ -3,17 +3,15 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 // 입력한 회원의 bookmark를 json 형식으로 받아 보여준다. movie랑 똑같은 형식이다.
-function Bookmark({ num, ID, link, favName, favImage }) {
+function Bookmark({ n, ID, link, favName, favImage }) {
   return (
     <div className={style.item}>
       <img src={favImage} alt={favName} className={style.book} />
-      <div>
-        <h2 className={style.book_name}>
-          <Link to={`/choosebook/${localStorage.getItem("ID")}/${num}`}>
-            {favName}
-          </Link>
-        </h2>
-      </div>
+      <h2 className={style.book_name}>
+        <Link to={`/modibook/${localStorage.getItem("ID")}/${n}`}>
+          {favName}
+        </Link>
+      </h2>
     </div>
   );
 }

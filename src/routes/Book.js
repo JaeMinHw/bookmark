@@ -14,9 +14,9 @@ function Book() {
     // setFav(json.data.movies);
     if (json.result === "success") {
       setFav(json.list);
-      // console.log(json.list.length);
-      // console.log(json.list[0]);
-      console.log(json.list);
+      // // console.log(json.list.length);
+      // // console.log(json.list[0]);
+      console.log(json);
     }
   };
   useEffect(() => {
@@ -28,8 +28,8 @@ function Book() {
       <div className={style.contain}>
         {fav.map((bookma) => (
           <Bookmark
-            key={bookma.ID}
-            num={bookma.num}
+            key={bookma.num}
+            n={bookma.num}
             ID={bookma.ID}
             link={bookma.link}
             favImage={bookma.favImage}
