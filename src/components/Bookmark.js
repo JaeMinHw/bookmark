@@ -1,23 +1,25 @@
 import style from "./Bookmark.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import ImageComponent from "./ImageComponent";
 
 // 입력한 회원의 bookmark를 json 형식으로 받아 보여준다. movie랑 똑같은 형식이다.
 function Bookmark({ n, ID, link, favName, favImage }) {
   return (
-    <div className={style.item}>
-      <img src={favImage} alt={favName} className={style.book} />
-      <h2 className={style.book_name}>
-        <Link to={`/modibook/${localStorage.getItem("ID")}/${n}`}>
-          {favName}
-        </Link>
-      </h2>
-    </div>
+    <Link to={`/modibook/${localStorage.getItem("ID")}/${n}`}>
+      <div className={style.item}>
+        {/* <img src={favImage} alt={favName} className={style.book} /> */}
+        {link ? (
+          <ImageComponent key={favName} li={link} name={favName} />
+        ) : null}
+        <h2 className={style.book_name}>{favName}</h2>
+      </div>
+    </Link>
   );
 }
 
 Bookmark.propTypes = {
-  num: PropTypes.number.isRequired,
+  n: PropTypes.string.isRequired,
   ID: PropTypes.string.isRequired,
 };
 
