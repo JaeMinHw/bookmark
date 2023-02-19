@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Title from "../components/Title";
 import Bookmodi from "../components/Bookmodi";
-console.log("hello");
+
 function Modi() {
   var [fav1, setFav1] = useState([]);
   const { id, userID } = useParams();
