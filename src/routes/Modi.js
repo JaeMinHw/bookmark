@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 import Title from "../components/Title";
@@ -8,7 +8,7 @@ function Modi() {
   var [fav1, setFav1] = useState([]);
   const { id, userID } = useParams();
 
-  const getFav1 = async () => {
+  const getFav1 = useCallback(async () => {
     const json1 = await (
       await fetch(`http://127.0.0.1:5000/choosebook/${userID}/${id}`)
     ).json();
@@ -17,14 +17,13 @@ function Modi() {
       // // console.log(json.list.length);
       // // console.log(json.list[0]);
       setFav1(json1.list1);
-      fav1 = json1;
-
-      console.log(fav1);
     }
-  };
+  }, [userID, id]);
+
   useEffect(() => {
     getFav1();
-  }, []);
+  }, [getFav1]);
+
   return (
     <div>
       <Title />
